@@ -11,7 +11,8 @@ const fs = require('fs')
 fs.readFile('./www/index.html', 'utf8', (err, data) => {
     if(err){
         console.error(err)
-        return process.exit(1)
+        return 
+        process.exit(1)
         
     } else {
         console.log(data)
@@ -22,7 +23,7 @@ fs.readFile('./www/index.html', 'utf8', (err, data) => {
 const server = http.createServer((req, res) => {
   res.statusCode = 200
   res.setHeader('Content-Type', 'text/html')
-  res.end('./www/index.html')
+  res.end(data)
 })
 
 server.listen(port, () => {
